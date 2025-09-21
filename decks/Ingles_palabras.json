@@ -24,12 +24,28 @@
       "back": "Ventana"
     },
     {
-      "id": "e3dd94c1-3298-4167-934b-93381d98521d",
+      "id": "895dab34-b811-4449-ae90-31cd265a3d26",
       "front": "Dog",
       "back": "Perro"
     }
   ],
   "studyHistory": [
+    {
+      "known": 5,
+      "unknown": 1,
+      "completed": true,
+      "knownCardIds": [
+        "275e52c0-406a-4e8b-b20a-394acef32c8c",
+        "5212bb98-6761-4cc6-b4e9-ad7b219c850e",
+        "895dab34-b811-4449-ae90-31cd265a3d26",
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0",
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba"
+      ],
+      "unknownCardIds": [
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba"
+      ],
+      "date": "2025-09-21T03:37:28.739Z"
+    },
     {
       "known": 5,
       "unknown": 1,
@@ -47,5 +63,5 @@
       "date": "2025-09-21T01:56:11.469Z"
     }
   ],
-  "lastPlayed": "2025-09-21T01:56:11.469Z"
+  "lastPlayed": "2025-09-21T03:37:28.739Z"
 }
