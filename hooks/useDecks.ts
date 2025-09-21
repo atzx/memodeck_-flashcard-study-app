@@ -157,5 +157,39 @@ export const useDecks = () => {
     URL.revokeObjectURL(url);
   }, [decks]);
 
-  return { decks, addDeck, updateDeck, deleteDeck, addCard, updateCard, deleteCard, addStudySession, exportDeck, isInitialized };
+  const importDecks = useCallback(async (files: FileList) => {
+    for (const file of files) {
+      if (file.type === 'application/json') {
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          try {
+            const content = e.target?.result;
+            if (typeof content === 'string') {
+              const deck = JSON.parse(content);
+              // Basic validation
+              if (deck.title && Array.isArray(deck.cards)) {
+                const newDeck = {
+                  ...deck,
+                  id: crypto.randomUUID(), // Assign new ID
+                  studyHistory: [],
+                  lastPlayed: null,
+                };
+                await fetch(`${API_URL}/decks`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(newDeck),
+                });
+                setDecks(prev => [...prev, newDeck]);
+              }
+            }
+          } catch (error) {
+            console.error('Error importing deck:', error);
+          }
+        };
+        reader.readAsText(file);
+      }
+    }
+  }, []);
+
+  return { decks, addDeck, updateDeck, deleteDeck, addCard, updateCard, deleteCard, addStudySession, exportDeck, importDecks, isInitialized };
 };

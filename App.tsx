@@ -17,29 +17,10 @@ interface StudyResult {
     unknownCardIds: string[];
 }
 
-const Header: React.FC<{ onImport: (files: FileList) => void }> = ({ onImport }) => {
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-            onImport(e.target.files);
-        }
-    };
-
+const Header: React.FC = () => {
     return (
         <header className="bg-surface p-4 shadow-md flex justify-between items-center">
             <h1 className="text-2xl font-bold text-primary">MemoDeck</h1>
-            <div>
-                <label htmlFor="import-decks" className="bg-secondary hover:bg-green-600 text-white font-bold py-2 px-4 rounded cursor-pointer transition-colors duration-200">
-                    Import Deck(s)
-                </label>
-                <input
-                    id="import-decks"
-                    type="file"
-                    multiple
-                    accept=".json"
-                    className="hidden"
-                    onChange={handleFileChange}
-                />
-            </div>
         </header>
     );
 };
@@ -114,6 +95,7 @@ const App: React.FC = () => {
                         onEditDeck={handleEditDeck}
                         onExportDeck={exportDeck}
                         onStudyDeck={handleStartStudy}
+                        onImportDecks={importDecks}
                     />
                 );
         }
@@ -121,7 +103,7 @@ const App: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-background font-sans">
-            <Header onImport={importDecks} />
+            <Header />
             <main className="p-4 sm:p-6 md:p-8">
                 {renderContent()}
             </main>

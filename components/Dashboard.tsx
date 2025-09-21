@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import type { Deck } from '../types';
 import { Modal } from './Modal';
-import { PlayIcon, EditIcon, DeleteIcon, ExportIcon, AddIcon } from './icons';
+import { PlayIcon, EditIcon, DeleteIcon, ExportIcon, AddIcon, ImportIcon } from './icons';
 
 interface DeckItemProps {
   deck: Deck;
@@ -113,27 +113,56 @@ interface DashboardProps {
   onEditDeck: (id: string) => void;
   onExportDeck: (id: string) => void;
   onStudyDeck: (id: string) => void;
+  onImportDecks: (files: FileList) => void;
 }
 
-export const Dashboard: React.FC<DashboardProps> = ({ decks, onAddDeck, onDeleteDeck, onEditDeck, onExportDeck, onStudyDeck }) => {
+export const Dashboard: React.FC<DashboardProps> = ({ decks, onAddDeck, onDeleteDeck, onEditDeck, onExportDeck, onStudyDeck, onImportDecks }) => {
     const [isCreatingDeck, setIsCreatingDeck] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleSaveDeck = (title: string, description: string) => {
         onAddDeck(title, description);
         setIsCreatingDeck(false);
     };
 
+    const handleImportClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        if (event.target.files) {
+            onImportDecks(event.target.files);
+        }
+    };
+
     return (
         <div>
             <div className="flex justify-between items-center mb-6">
                 <h2 className="text-3xl font-bold">My Decks</h2>
-                <button
-                    onClick={() => setIsCreatingDeck(true)}
-                    className="flex items-center bg-secondary hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition-colors"
-                >
-                    <AddIcon className="h-5 w-5 mr-2" />
-                    Create New Deck
-                </button>
+                <div className="flex space-x-3">
+                    <button
+                        onClick={handleImportClick}
+                        className="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded-md transition-colors"
+                    >
+                        <ImportIcon className="h-5 w-5 mr-2" />
+                        Import Deck(s)
+                    </button>
+                    <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileChange}
+                        className="hidden"
+                        accept=".json"
+                        multiple
+                    />
+                    <button
+                        onClick={() => setIsCreatingDeck(true)}
+                        className="flex items-center bg-secondary hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition-colors"
+                    >
+                        <AddIcon className="h-5 w-5 mr-2" />
+                        Create New Deck
+                    </button>
+                </div>
             </div>
 
             {decks.length > 0 ? (
