@@ -27,9 +27,54 @@
       "id": "895dab34-b811-4449-ae90-31cd265a3d26",
       "front": "Dog",
       "back": "Perro"
+    },
+    {
+      "id": "b8e322c2-dd76-4dd5-aff5-133300a0050d",
+      "front": "Cat",
+      "back": "Gato"
+    },
+    {
+      "id": "467a5221-2953-4c58-9ffd-ba2c40da751a",
+      "front": "狗",
+      "back": "Perro"
     }
   ],
   "studyHistory": [
+    {
+      "known": 7,
+      "unknown": 2,
+      "completed": true,
+      "knownCardIds": [
+        "b8e322c2-dd76-4dd5-aff5-133300a0050d",
+        "895dab34-b811-4449-ae90-31cd265a3d26",
+        "467a5221-2953-4c58-9ffd-ba2c40da751a",
+        "5212bb98-6761-4cc6-b4e9-ad7b219c850e",
+        "275e52c0-406a-4e8b-b20a-394acef32c8c",
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba",
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0"
+      ],
+      "unknownCardIds": [
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba",
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0"
+      ],
+      "date": "2025-09-21T04:26:32.917Z"
+    },
+    {
+      "known": 5,
+      "unknown": 1,
+      "completed": true,
+      "knownCardIds": [
+        "895dab34-b811-4449-ae90-31cd265a3d26",
+        "5212bb98-6761-4cc6-b4e9-ad7b219c850e",
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba",
+        "275e52c0-406a-4e8b-b20a-394acef32c8c",
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0"
+      ],
+      "unknownCardIds": [
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0"
+      ],
+      "date": "2025-09-21T04:24:56.702Z"
+    },
     {
       "known": 5,
       "unknown": 1,
@@ -63,5 +108,5 @@
       "date": "2025-09-21T01:56:11.469Z"
     }
   ],
-  "lastPlayed": "2025-09-21T03:37:28.739Z"
+  "lastPlayed": "2025-09-21T04:26:32.917Z"
 }

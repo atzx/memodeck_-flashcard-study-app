@@ -141,5 +141,21 @@ export const useDecks = () => {
     }
   }, [decks]);
 
-  return { decks, addDeck, updateDeck, deleteDeck, addCard, updateCard, deleteCard, addStudySession, isInitialized };
+  const exportDeck = useCallback((deckId: string) => {
+    const deckToExport = decks.find(deck => deck.id === deckId);
+    if (!deckToExport) return;
+
+    const jsonString = JSON.stringify(deckToExport, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${deckToExport.title.replace(/\s+/g, '_')}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, [decks]);
+
+  return { decks, addDeck, updateDeck, deleteDeck, addCard, updateCard, deleteCard, addStudySession, exportDeck, isInitialized };
 };
