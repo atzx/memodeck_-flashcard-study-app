@@ -1,0 +1,5 @@
+{
+  "name": "MemoDeck: Flashcard Study App",
+  "description": "An intuitive, client-side flashcard application for creating, managing, and studying decks. All data is persistently stored in your browser's local storage, no backend required.",
+  "requestFramePermissions": []
+}

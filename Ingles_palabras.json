@@ -1,0 +1,51 @@
+{
+  "id": "f42ea6a1-7875-4bfa-8f38-07aa31e40cfe",
+  "title": "Ingles palabras",
+  "description": "Ingles palabras",
+  "cards": [
+    {
+      "id": "18b8f0c4-8d29-4689-8846-3ae0726cfbba",
+      "front": "Hi",
+      "back": "Hola"
+    },
+    {
+      "id": "5212bb98-6761-4cc6-b4e9-ad7b219c850e",
+      "front": "Bye",
+      "back": "Adios"
+    },
+    {
+      "id": "35ade4cd-cbf9-45e7-b952-967eee8792c0",
+      "front": "House",
+      "back": "Casa"
+    },
+    {
+      "id": "275e52c0-406a-4e8b-b20a-394acef32c8c",
+      "front": "Window",
+      "back": "Ventana"
+    },
+    {
+      "id": "e3dd94c1-3298-4167-934b-93381d98521d",
+      "front": "Dog",
+      "back": "Perro"
+    }
+  ],
+  "studyHistory": [
+    {
+      "known": 5,
+      "unknown": 1,
+      "completed": true,
+      "knownCardIds": [
+        "18b8f0c4-8d29-4689-8846-3ae0726cfbba",
+        "275e52c0-406a-4e8b-b20a-394acef32c8c",
+        "35ade4cd-cbf9-45e7-b952-967eee8792c0",
+        "5212bb98-6761-4cc6-b4e9-ad7b219c850e",
+        "e3dd94c1-3298-4167-934b-93381d98521d"
+      ],
+      "unknownCardIds": [
+        "e3dd94c1-3298-4167-934b-93381d98521d"
+      ],
+      "date": "2025-09-21T01:56:11.469Z"
+    }
+  ],
+  "lastPlayed": "2025-09-21T01:56:11.469Z"
+}
