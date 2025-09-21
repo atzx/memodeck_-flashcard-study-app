@@ -1,0 +1,24 @@
+{
+  "id": "8d28c07f-6348-400d-8962-a87a774c2736",
+  "title": "Palabras Ingles",
+  "description": "Palabras Ingles",
+  "cards": [
+    {
+      "id": "dd500e0f-d8dc-4743-a6f9-4bae08f4d2fb",
+      "front": "Dog",
+      "back": "Perro"
+    },
+    {
+      "id": "31830b53-b3ee-4d0a-985a-3f0617f98816",
+      "front": "Cat",
+      "back": "Gato"
+    },
+    {
+      "id": "63da2b2e-55d7-41ed-8f4d-a8f6a29c19de",
+      "front": "House",
+      "back": "Casa"
+    }
+  ],
+  "studyHistory": [],
+  "lastPlayed": null
+}
