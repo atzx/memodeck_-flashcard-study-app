@@ -19,6 +19,21 @@
       "back": "Casa"
     }
   ],
-  "studyHistory": [],
-  "lastPlayed": null
+  "studyHistory": [
+    {
+      "known": 3,
+      "unknown": 1,
+      "completed": true,
+      "knownCardIds": [
+        "31830b53-b3ee-4d0a-985a-3f0617f98816",
+        "dd500e0f-d8dc-4743-a6f9-4bae08f4d2fb",
+        "63da2b2e-55d7-41ed-8f4d-a8f6a29c19de"
+      ],
+      "unknownCardIds": [
+        "63da2b2e-55d7-41ed-8f4d-a8f6a29c19de"
+      ],
+      "date": "2025-09-21T19:32:07.811Z"
+    }
+  ],
+  "lastPlayed": "2025-09-21T19:32:07.811Z"
 }

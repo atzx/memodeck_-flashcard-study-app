@@ -11,6 +11,9 @@ app.use(cors());
 app.use(express.json());
 
 const decksDirectory = path.join(__dirname, '..', 'decks');
+const clientDistDirectory = path.join(__dirname, '..', 'dist');
+
+app.use(express.static(clientDistDirectory));
 
 // Ensure decks directory exists
 fs.mkdir(decksDirectory, { recursive: true });
@@ -85,6 +88,16 @@ app.delete('/api/decks/:id', async (req, res) => {
     }
 });
 
+
+// This catch-all route is for serving the single-page application.
+// It should be placed after all API routes.
+app.use((req, res) => {
+  res.sendFile(path.join(clientDistDirectory, 'index.html'), (err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
